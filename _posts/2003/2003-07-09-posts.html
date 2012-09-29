@@ -1,0 +1,1212 @@
+---
+layout: post
+title: "ビックカメラのポイントシステムを検証する"
+category: topics
+tags:
+- 2003年の記事
+---
+<p><a href="http://www.m-net.ne.jp/%7Edoba/goto/top.htm">茜17歳</a>さんのページで<a href="http://www.m-net.ne.jp/%7Edoba/goto/log/2003log/bic.htm">ビックカメラの「他店が当店より安い場合はお知らせください」は本当かを検証する</a>と言う特集が組まれています。その特集の中で、「ポイントの使い時は、いつなんでしょう？」と書かれてあったので、以下のようなメールを送りました。<a href="http://www.biccamera.com/bicbic/jsp/w/service/index.jsp">ポイント</a>とは、購入金額の何％かが蓄積され、次回の購入時に差し引かれるシステムのことです。
+      <p></p><table width="80%" border="1" cellspacing="1" cellpadding="4"><tr>
+<td bgcolor="#ffffe1">
+          支払いの時、毎回「ポイントは、お貯めでよろしいですか？」と言われます。店側に不利なように誘導するはずが無いので、「ポイントは毎回使う」が正解だと思います。</td> 
+        </tr></table><p>それで、簡単な検証はしたのですが、感覚で物を言っているので間違っている可能性があります。と、言うわけで、いくつかの場合について検証してみたいと思います。</p>
+      <p>前提</p>
+      <ul>
+<li>消費税にポイントは付かないので、無視
+        </li>
+<li>1ポイント未満は切り上げ
+        </li>
+<li>10回購入した後、残ったポイントは、11回目で使い切る
+      </li>
+</ul><p>まず、毎回同じ金額の商品を購入する場合です。ポイントは10％です。</p>
+      <h4>10回目にまとめて使う場合（店側が誘導するパターン）</h4>
+      <p></p><table width="80%" border="1" cellspacing="2" cellpadding="0">
+<tr>
+<th bgcolor="#80ff80">
+          回</th> 
+          <th bgcolor="#80ff80">
+          購入金額</th> 
+          <th bgcolor="#80ff80">
+          使用ポイント</th> 
+          <th bgcolor="#80ff80">
+          支払う金額</th> 
+          <th bgcolor="#80ff80">
+          新規ポイント</th> 
+          <th bgcolor="#80ff80">
+          残りポイント</th> 
+        </tr>
+<tr>
+<td align="CENTER">
+          1</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          0</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          1000</td> 
+          <td align="RIGHT">
+          1000</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          2</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          0</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          1000</td> 
+          <td align="RIGHT">
+          2000</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          3</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          0</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          1000</td> 
+          <td align="RIGHT">
+          3000</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          4</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          0</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          1000</td> 
+          <td align="RIGHT">
+          4000</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          5</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          0</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          1000</td> 
+          <td align="RIGHT">
+          5000</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          6</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          0</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          1000</td> 
+          <td align="RIGHT">
+          6000</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          7</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          0</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          1000</td> 
+          <td align="RIGHT">
+          7000</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          8</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          0</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          1000</td> 
+          <td align="RIGHT">
+          8000</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          9</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          0</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          1000</td> 
+          <td align="RIGHT">
+          9000</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          10</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          9000</td> 
+          <td align="RIGHT">
+          1000</td> 
+          <td align="RIGHT">
+          100</td> 
+          <td align="RIGHT">
+          100</td> 
+        </tr>
+</table><p>100,100円分の商品を、91,000円で購入。<font color="#ff0000">割引率、9.09090909％</font>。</p>
+      <h4>毎回使う</h4>
+      <p></p><table width="80%" border="1" cellspacing="2" cellpadding="0">
+<tr>
+<th bgcolor="#80ff80">
+          回</th> 
+          <th bgcolor="#80ff80">
+          購入金額</th> 
+          <th bgcolor="#80ff80">
+          使用ポイント</th> 
+          <th bgcolor="#80ff80">
+          支払う金額</th> 
+          <th bgcolor="#80ff80">
+          新規ポイント</th> 
+          <th bgcolor="#80ff80">
+          残りポイント</th> 
+        </tr>
+<tr>
+<td align="CENTER">
+          1</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          0</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          1000</td> 
+          <td align="RIGHT">
+          1000</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          2</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          1000</td> 
+          <td align="RIGHT">
+          9000</td> 
+          <td align="RIGHT">
+          900</td> 
+          <td align="RIGHT">
+          900</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          3</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          900</td> 
+          <td align="RIGHT">
+          9100</td> 
+          <td align="RIGHT">
+          910</td> 
+          <td align="RIGHT">
+          910</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          4</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          910</td> 
+          <td align="RIGHT">
+          9090</td> 
+          <td align="RIGHT">
+          909</td> 
+          <td align="RIGHT">
+          909</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          5</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          909</td> 
+          <td align="RIGHT">
+          9091</td> 
+          <td align="RIGHT">
+          910</td> 
+          <td align="RIGHT">
+          910</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          6</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          910</td> 
+          <td align="RIGHT">
+          9090</td> 
+          <td align="RIGHT">
+          909</td> 
+          <td align="RIGHT">
+          909</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          7</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          909</td> 
+          <td align="RIGHT">
+          9091</td> 
+          <td align="RIGHT">
+          910</td> 
+          <td align="RIGHT">
+          910</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          8</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          910</td> 
+          <td align="RIGHT">
+          9090</td> 
+          <td align="RIGHT">
+          909</td> 
+          <td align="RIGHT">
+          909</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          9</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          909</td> 
+          <td align="RIGHT">
+          9091</td> 
+          <td align="RIGHT">
+          910</td> 
+          <td align="RIGHT">
+          910</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          10</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          910</td> 
+          <td align="RIGHT">
+          9090</td> 
+          <td align="RIGHT">
+          909</td> 
+          <td align="RIGHT">
+          909</td> 
+        </tr>
+</table><p>100,909円分の商品を、91,733円で購入。<font color="#ff0000">割引率、9.09334153％</font>。</p>
+      <p>微妙ですが、毎回使ったほうが有利です。ここまではメールに書いた通りなのですが、実際に購入する金額は、毎回異なります。そこで、高いものとポイント内清算出来るほど安いものを交互に購入した場合を計算してみます。</p>
+      <h4>毎回使う</h4>
+      <p></p><table width="80%" border="1" cellspacing="2" cellpadding="0">
+<tr>
+<th bgcolor="#80ff80">
+          回</th> 
+          <th bgcolor="#80ff80">
+          購入金額</th> 
+          <th bgcolor="#80ff80">
+          使用ポイント</th> 
+          <th bgcolor="#80ff80">
+          支払う金額</th> 
+          <th bgcolor="#80ff80">
+          新規ポイント</th> 
+          <th bgcolor="#80ff80">
+          残りポイント</th> 
+        </tr>
+<tr>
+<td align="CENTER">
+          1</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          0</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          1000</td> 
+          <td align="RIGHT">
+          1000</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          2</td> 
+          <td align="RIGHT">
+          500</td> 
+          <td align="RIGHT">
+          500</td> 
+          <td align="RIGHT">
+          0</td> 
+          <td align="RIGHT">
+          0</td> 
+          <td align="RIGHT">
+          500</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          3</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          500</td> 
+          <td align="RIGHT">
+          9500</td> 
+          <td align="RIGHT">
+          950</td> 
+          <td align="RIGHT">
+          950</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          4</td> 
+          <td align="RIGHT">
+          500</td> 
+          <td align="RIGHT">
+          500</td> 
+          <td align="RIGHT">
+          0</td> 
+          <td align="RIGHT">
+          0</td> 
+          <td align="RIGHT">
+          450</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          5</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          450</td> 
+          <td align="RIGHT">
+          9550</td> 
+          <td align="RIGHT">
+          955</td> 
+          <td align="RIGHT">
+          955</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          6</td> 
+          <td align="RIGHT">
+          500</td> 
+          <td align="RIGHT">
+          500</td> 
+          <td align="RIGHT">
+          0</td> 
+          <td align="RIGHT">
+          0</td> 
+          <td align="RIGHT">
+          455</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          7</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          455</td> 
+          <td align="RIGHT">
+          9545</td> 
+          <td align="RIGHT">
+          955</td> 
+          <td align="RIGHT">
+          955</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          8</td> 
+          <td align="RIGHT">
+          500</td> 
+          <td align="RIGHT">
+          500</td> 
+          <td align="RIGHT">
+          0</td> 
+          <td align="RIGHT">
+          0</td> 
+          <td align="RIGHT">
+          455</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          9</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          455</td> 
+          <td align="RIGHT">
+          9545</td> 
+          <td align="RIGHT">
+          955</td> 
+          <td align="RIGHT">
+          955</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          10</td> 
+          <td align="RIGHT">
+          500</td> 
+          <td align="RIGHT">
+          500</td> 
+          <td align="RIGHT">
+          0</td> 
+          <td align="RIGHT">
+          0</td> 
+          <td align="RIGHT">
+          455</td> 
+        </tr>
+</table><p>52,955円分の商品を、48,140円で購入。<font color="#ff0000">割引率、9.09262581％</font>。</p>
+      <h4>安いときは使わない</h4>
+      <p></p><table border="1" cellspacing="2" cellpadding="0" width="80%">
+<tr>
+<th bgcolor="#80ff80">
+          回</th> 
+          <th bgcolor="#80ff80">
+          購入金額</th> 
+          <th bgcolor="#80ff80">
+          使用ポイント</th> 
+          <th bgcolor="#80ff80">
+          支払う金額</th> 
+          <th bgcolor="#80ff80">
+          新規ポイント</th> 
+          <th bgcolor="#80ff80">
+          残りポイント</th> 
+        </tr>
+<tr>
+<td align="CENTER">
+          1</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          0</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          1000</td> 
+          <td align="RIGHT">
+          1000</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          2</td> 
+          <td align="RIGHT">
+          500</td> 
+          <td align="RIGHT">
+          0</td> 
+          <td align="RIGHT">
+          500</td> 
+          <td align="RIGHT">
+          50</td> 
+          <td align="RIGHT">
+          1050</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          3</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          1050</td> 
+          <td align="RIGHT">
+          8950</td> 
+          <td align="RIGHT">
+          895</td> 
+          <td align="RIGHT">
+          895</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          4</td> 
+          <td align="RIGHT">
+          500</td> 
+          <td align="RIGHT">
+          0</td> 
+          <td align="RIGHT">
+          500</td> 
+          <td align="RIGHT">
+          50</td> 
+          <td align="RIGHT">
+          945</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          5</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          945</td> 
+          <td align="RIGHT">
+          9055</td> 
+          <td align="RIGHT">
+          906</td> 
+          <td align="RIGHT">
+          906</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          6</td> 
+          <td align="RIGHT">
+          500</td> 
+          <td align="RIGHT">
+          0</td> 
+          <td align="RIGHT">
+          500</td> 
+          <td align="RIGHT">
+          50</td> 
+          <td align="RIGHT">
+          956</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          7</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          956</td> 
+          <td align="RIGHT">
+          9044</td> 
+          <td align="RIGHT">
+          905</td> 
+          <td align="RIGHT">
+          905</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          8</td> 
+          <td align="RIGHT">
+          500</td> 
+          <td align="RIGHT">
+          0</td> 
+          <td align="RIGHT">
+          500</td> 
+          <td align="RIGHT">
+          50</td> 
+          <td align="RIGHT">
+          955</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          9</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          955</td> 
+          <td align="RIGHT">
+          9045</td> 
+          <td align="RIGHT">
+          905</td> 
+          <td align="RIGHT">
+          905</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          10</td> 
+          <td align="RIGHT">
+          500</td> 
+          <td align="RIGHT">
+          0</td> 
+          <td align="RIGHT">
+          500</td> 
+          <td align="RIGHT">
+          50</td> 
+          <td align="RIGHT">
+          955</td> 
+        </tr>
+</table><p>53,455円分の商品を、48,594円で購入。<font color="#ff0000">割引率、9.09363016％</font>。</p>
+      <p>これまた微妙ですが、毎回使う方が不利です。これは、<font color="#0000ff">ポイント切り上げの利益</font>を得るチャンスが少なくなっているからだと考えられます。1回の購入は、次々回のポイントに
+      90％*10％*10％=0.9％の影響（つまり100円以下の端数だと、切り上げて1ポイント）を与えるのですが、それが0になってしまうからです。</p>
+      <p>ここまでのまとめ</p>
+      <blockquote>
+        <p><b><font size="+1">ポイントは毎回使う。でも、ポイント内清算が出来るときは、使わない。</font></b></p>
+      </blockquote>
+      <p></p>
+      <p>次に、ビックカメラはポイントの％が違うときがあるので、それを検証します。10％の商品と、15％の商品を交互に購入した場合を計算してみます。</p>
+      <h4>毎回使う</h4>
+      <p></p><table width="80%" border="1" cellspacing="2" cellpadding="0">
+<tr>
+<th bgcolor="#80ff80">
+          回</th> 
+          <th bgcolor="#80ff80">
+          購入金額</th> 
+          <th bgcolor="#80ff80">
+          使用ポイント</th> 
+          <th bgcolor="#80ff80">
+          支払う金額</th> 
+          <th bgcolor="#80ff80">
+          新規ポイント</th> 
+          <th bgcolor="#80ff80">
+          残りポイント</th> 
+          <th bgcolor="#80ff80">
+          還元率</th> 
+        </tr>
+<tr>
+<td align="CENTER">
+          1</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          0</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          1000</td> 
+          <td align="RIGHT">
+          1000</td> 
+          <td align="RIGHT">
+          10</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          2</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          1000</td> 
+          <td align="RIGHT">
+          9000</td> 
+          <td align="RIGHT">
+          1350</td> 
+          <td align="RIGHT">
+          1350</td> 
+          <td align="RIGHT">
+          15</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          3</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          1350</td> 
+          <td align="RIGHT">
+          8650</td> 
+          <td align="RIGHT">
+          865</td> 
+          <td align="RIGHT">
+          865</td> 
+          <td align="RIGHT">
+          10</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          4</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          865</td> 
+          <td align="RIGHT">
+          9135</td> 
+          <td align="RIGHT">
+          1371</td> 
+          <td align="RIGHT">
+          1371</td> 
+          <td align="RIGHT">
+          15</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          5</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          1371</td> 
+          <td align="RIGHT">
+          8629</td> 
+          <td align="RIGHT">
+          863</td> 
+          <td align="RIGHT">
+          863</td> 
+          <td align="RIGHT">
+          10</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          6</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          863</td> 
+          <td align="RIGHT">
+          9137</td> 
+          <td align="RIGHT">
+          1371</td> 
+          <td align="RIGHT">
+          1371</td> 
+          <td align="RIGHT">
+          15</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          7</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          1371</td> 
+          <td align="RIGHT">
+          8629</td> 
+          <td align="RIGHT">
+          863</td> 
+          <td align="RIGHT">
+          863</td> 
+          <td align="RIGHT">
+          10</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          8</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          863</td> 
+          <td align="RIGHT">
+          9137</td> 
+          <td align="RIGHT">
+          1371</td> 
+          <td align="RIGHT">
+          1371</td> 
+          <td align="RIGHT">
+          15</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          9</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          1371</td> 
+          <td align="RIGHT">
+          8629</td> 
+          <td align="RIGHT">
+          863</td> 
+          <td align="RIGHT">
+          863</td> 
+          <td align="RIGHT">
+          10</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          10</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          863</td> 
+          <td align="RIGHT">
+          9137</td> 
+          <td align="RIGHT">
+          1371</td> 
+          <td align="RIGHT">
+          1371</td> 
+          <td align="RIGHT">
+          15</td> 
+        </tr>
+</table><p>101,371円分の商品を、90,083円で購入。<font color="#ff0000">割引率、11.13533456％</font>。</p>
+      <h4>ポイント還元率が高いときは使わない</h4>
+      <p></p><table width="80%" border="1" cellspacing="2" cellpadding="0">
+<tr>
+<th bgcolor="#80ff80">
+          回</th> 
+          <th bgcolor="#80ff80">
+          購入金額</th> 
+          <th bgcolor="#80ff80">
+          使用ポイント</th> 
+          <th bgcolor="#80ff80">
+          支払う金額</th> 
+          <th bgcolor="#80ff80">
+          新規ポイント</th> 
+          <th bgcolor="#80ff80">
+          残りポイント</th> 
+          <th bgcolor="#80ff80">
+          還元率</th> 
+        </tr>
+<tr>
+<td align="CENTER">
+          1</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          0</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          1000</td> 
+          <td align="RIGHT">
+          1000</td> 
+          <td align="RIGHT">
+          10</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          2</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          0</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          1500</td> 
+          <td align="RIGHT">
+          2500</td> 
+          <td align="RIGHT">
+          15</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          3</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          2500</td> 
+          <td align="RIGHT">
+          7500</td> 
+          <td align="RIGHT">
+          750</td> 
+          <td align="RIGHT">
+          750</td> 
+          <td align="RIGHT">
+          10</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          4</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          0</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          1500</td> 
+          <td align="RIGHT">
+          2250</td> 
+          <td align="RIGHT">
+          15</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          5</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          2250</td> 
+          <td align="RIGHT">
+          7750</td> 
+          <td align="RIGHT">
+          775</td> 
+          <td align="RIGHT">
+          775</td> 
+          <td align="RIGHT">
+          10</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          6</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          0</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          1500</td> 
+          <td align="RIGHT">
+          2275</td> 
+          <td align="RIGHT">
+          15</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          7</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          2275</td> 
+          <td align="RIGHT">
+          7725</td> 
+          <td align="RIGHT">
+          773</td> 
+          <td align="RIGHT">
+          773</td> 
+          <td align="RIGHT">
+          10</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          8</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          0</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          1500</td> 
+          <td align="RIGHT">
+          2273</td> 
+          <td align="RIGHT">
+          15</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          9</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          2273</td> 
+          <td align="RIGHT">
+          7727</td> 
+          <td align="RIGHT">
+          773</td> 
+          <td align="RIGHT">
+          773</td> 
+          <td align="RIGHT">
+          10</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          10</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          0</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          1500</td> 
+          <td align="RIGHT">
+          2273</td> 
+          <td align="RIGHT">
+          15</td> 
+        </tr>
+</table><p>102,273円分の商品を、90,702円で購入。<font color="#ff0000">割引率、11.3138365％</font>。</p>
+      <p>これも、毎回使うほうが不利です。割引き原資は高くしたほうが有利だからでしょう。</p>
+      <p>ちなみに、</p>
+      <h4>まとめて使った場合</h4>
+      <p></p><table width="80%" border="1" cellspacing="2" cellpadding="0">
+<tr>
+<th bgcolor="#80ff80">
+          回</th> 
+          <th bgcolor="#80ff80">
+          購入金額</th> 
+          <th bgcolor="#80ff80">
+          使用ポイント</th> 
+          <th bgcolor="#80ff80">
+          支払う金額</th> 
+          <th bgcolor="#80ff80">
+          新規ポイント</th> 
+          <th bgcolor="#80ff80">
+          残りポイント</th> 
+          <th bgcolor="#80ff80">
+          還元率</th> 
+        </tr>
+<tr>
+<td align="CENTER">
+          1</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          0</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          1000</td> 
+          <td align="RIGHT">
+          1000</td> 
+          <td align="RIGHT">
+          10</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          2</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          0</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          1500</td> 
+          <td align="RIGHT">
+          2500</td> 
+          <td align="RIGHT">
+          15</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          3</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          0</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          1000</td> 
+          <td align="RIGHT">
+          3500</td> 
+          <td align="RIGHT">
+          10</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          4</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          0</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          1500</td> 
+          <td align="RIGHT">
+          5000</td> 
+          <td align="RIGHT">
+          15</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          5</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          0</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          1000</td> 
+          <td align="RIGHT">
+          6000</td> 
+          <td align="RIGHT">
+          10</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          6</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          0</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          1500</td> 
+          <td align="RIGHT">
+          7500</td> 
+          <td align="RIGHT">
+          15</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          7</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          0</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          1000</td> 
+          <td align="RIGHT">
+          8500</td> 
+          <td align="RIGHT">
+          10</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          8</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          0</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          1500</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          15</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          9</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          0</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          1000</td> 
+          <td align="RIGHT">
+          11000</td> 
+          <td align="RIGHT">
+          10</td> 
+        </tr>
+<tr>
+<td align="CENTER">
+          10</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          10000</td> 
+          <td align="RIGHT">
+          0</td> 
+          <td align="RIGHT">
+          0</td> 
+          <td align="RIGHT">
+          1000</td> 
+          <td align="RIGHT">
+          15</td> 
+        </tr>
+</table><p>101,000円分の商品を、90,000円で購入。<font color="#ff0000">割引率、10.89108911％</font>。</p>
+      <p>となり、貯めることの不利は変わりません。</p>
+      <h4>まとめ</h4>
+      <blockquote>
+        <p><b><font color="#ff0000" size="+1">基本的に、ポイントは毎回使う方が有利。</font></b></p>
+        <p><b><font color="#ff0000">でも、ポイント内清算が出来るときは、使わない。<br>
+        たまにあるポイントが高い商品のときも、使わない。</font></b></p>
+      </blockquote>
+      <p>ところで、気づいた方もいるかも知れませんが、10％ポイント還元となっているのに割引率は9％ちょっとにしかなりません。これは、どういうことでしょうか？ビックカメラの<a href="http://www.biccamera.com/bicbic/jsp/w/information/contact/index.jsp">ポイントサービスセンター</a>に電話して聞いてみました。答えてくれたのは、＊＊＊
+      さんという方です。</p>
+      <p>Q：　他店との比較の際に分かりにくいのですが、ポイント10％とは他店での何％引き相当なんでしょうか？</p>
+      <p>A：　他店での10％引きと同じと考えてください。同じ値段で同じ％だったら、どちらが有利とかはありません。</p>
+      <p><font size="+2">本当でしょうか？</font></p>
+      <p>#　答え：ウソ（不実告知）です（計算はしましたが、漸化式は書くのが面倒なので(^^;、各自で）。<br>
+      #　ビックカメラは、組織的にウソを付いているのでしょうか？</p>
+      <p></p>
