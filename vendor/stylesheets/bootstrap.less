@@ -1,0 +1,41 @@
+@import "bootstrap/bootstrap.less";
+
+@baseFontSize:          20px;
+@baseLineHeight:        28px;
+
+// Navbar
+// -------------------------
+@navbarCollapseWidth:             979px;
+
+@navbarHeight:                    40px;
+@navbarBackground:                @grayDarker;
+@navbarBackgroundHighlight:       @grayDarker;
+@navbarBorder:                    darken(@navbarBackground, 12%);
+
+@navbarText:                      @grayLight;
+@navbarLinkColor:                 @grayLight;
+@navbarLinkColorHover:            @white;
+@navbarLinkColorActive:           @navbarLinkColorHover;
+@navbarLinkBackgroundHover:       transparent;
+@navbarLinkBackgroundActive:      @navbarBackground;
+
+@navbarBrandColor:                @navbarLinkColor;
+
+// Inverted navbar
+@navbarInverseBackground:                #252A30;
+@navbarInverseBackgroundHighlight:       #252A30;
+@navbarInverseBorder:                    transparent;
+
+@navbarInverseText:                      @grayLighter;
+@navbarInverseLinkColor:                 @grayLighter;
+@navbarInverseLinkColorHover:            @white;
+@navbarInverseLinkColorActive:           @navbarInverseLinkColorHover;
+@navbarInverseLinkBackgroundHover:       @black;
+@navbarInverseLinkBackgroundActive:      @navbarInverseLinkBackgroundHover;
+
+@navbarInverseSearchBackground:          lighten(@navbarInverseBackground, 25%);
+@navbarInverseSearchBackgroundFocus:     @white;
+@navbarInverseSearchBorder:              @navbarInverseBackground;
+@navbarInverseSearchPlaceholderColor:    @white;
+
+@navbarInverseBrandColor:                @navbarInverseLinkColor;
