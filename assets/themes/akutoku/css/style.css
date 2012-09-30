@@ -1,5 +1,10 @@
 .date {
-	text-align: right;
+  text-align: right;
+}
+
+blockquote p {
+  line-height: 21px;
+  margin-top: 0.8em;
 }
 
 /* Override some defaults */
