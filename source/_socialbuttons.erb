@@ -1,0 +1,15 @@
+<% url = "http://blog.a902.net#{url}" %>
+
+<div style="text-align: right;">
+  <div class="social clearfix">
+    <div class="hatena">
+      <%= partial "hatena", locals: { url: url, title: title } %>
+    </div>
+    <div class="twitter">
+      <%= partial "twitter", locals: { url: url, title: title } %>
+    </div>
+    <div class="facebook_like">
+      <%= partial "facebook", locals: { url: url, title: title } %>
+    </div>
+  </div>
+</div>

@@ -1,24 +1,24 @@
 <% wrap_layout :layout do %>
-	<div class="page-header">
-	  <h1><%= current_article.title %></h1>
-	  <div class="date"><span><%= current_article.date.strftime('%Y年%-m月%-d日') %></span></div>
+  <div class="page-header">
+    <h1><%= current_article.title %></h1>
+    <div class="date"><span><%= current_article.date.strftime('%Y年%-m月%-d日') %></span></div>
     <%= partial "socialbuttons", locals: { url: current_article.url, title: current_article.title } %>
-	</div>
+  </div>
 
-	<div class="row">
-	  <div class="span12">
-	    <%= yield %>
-	    <hr>
+  <div class="row">
+    <div class="span12">
+      <%= yield %>
+      <hr>
 
-			<% unless current_article.tags.blank? %>
-	      <h4>Tags</h4>
-	      <ul class="tag_box">
-					<% current_article.tags.each do |tag| %>
-						<li><%= link_to tag, tag_path(tag) %></li>
-					<% end %>
-  	    </ul>
-			<% end %>
-	  </div>
-	</div>
-	<div><br /></div>
+      <% unless current_article.tags.blank? %>
+        <h4>Tags</h4>
+        <ul class="tag_box">
+          <% current_article.tags.each do |tag| %>
+            <li><%= link_to tag, tag_path(tag) %></li>
+          <% end %>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+  <div><br /></div>
 <% end %>
