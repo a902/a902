@@ -10,3 +10,4 @@ gem 'therubyracer'
 gem "less"
 gem "slim"
 gem "RedCloth"
+gem 'middleman-gh-pages'
