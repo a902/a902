@@ -3,4 +3,5 @@
  *= require "bootstrap"
  *= require "jekyll"
  *= require "style"
+ *= require "socialbutton"
 */

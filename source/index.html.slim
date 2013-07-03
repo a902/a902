@@ -1,0 +1,42 @@
+---
+pageable: true
+per_page: 10
+---
+
+.page-header
+  h1 悪徳商法？マニアックス
+
+- page_articles.each_with_index do |article, i|
+  .page-header
+    h1= link_to article.title, article
+    .date
+      span= article.date.strftime('%Y年%-m月%-d日')
+      = partial "socialbuttons", locals: { url: article.url, title: article.title }
+
+  .row
+    .span12
+      = article.body
+      hr/
+      - unless article.tags.blank?
+        h4 Tags
+        ul.tag_box
+          - article.tags.each do |tag|
+            li= link_to tag, tag_path(tag)
+  div
+    br/
+
+- if paginate
+  hr/
+  .pagination
+    - if prev_page
+      = link_to '&larr;Previous page', prev_page, class: "previous"
+    - else
+      span class="previous" &larr; Previous page
+
+    span.page_number
+      | Page: #{page_number} of #{num_pages}
+
+    - if next_page
+      = link_to 'Next page&rarr;', next_page, class: "next"
+    - else
+      span class="next" Next page&rarr;

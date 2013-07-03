@@ -110,6 +110,7 @@ PLATFORMS
 DEPENDENCIES
   RedCloth
   builder (~> 3.0.0)
+  haml
   less
   middleman (~> 3.1.2)
   middleman-blog (~> 3.2.0)
