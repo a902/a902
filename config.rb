@@ -30,6 +30,7 @@ end
 #page "/*", :layout => :post
 
 page "/feed.xml", :layout => false
+page "/atom.xml", :layout => false
 
 ### 
 # Compass
