@@ -14,7 +14,7 @@
         <h4>Tags</h4>
         <ul class="tag_box">
           <% current_article.tags.each do |tag| %>
-            <li><%= link_to tag, tag_path(tag) %></li>
+            <li><%= link_to tag, "/tags.html##{tag}-ref" %></li>
           <% end %>
         </ul>
       <% end %>
