@@ -10,7 +10,7 @@ activate :blog do |blog|
   blog.permalink = "topics/:year/:month:day.html"
   blog.sources = "topics/:year/:month-:day-:title.html"
   #blog.taglink = "tags.html#:tag-ref"
-  blog.taglink = "tags.html#:tag-ref"
+  blog.taglink = "tags/:tag.html"
   blog.layout = "post"
   # blog.summary_separator = /(READMORE)/
   # blog.summary_length = 250
